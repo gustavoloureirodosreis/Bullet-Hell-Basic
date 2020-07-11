@@ -13,10 +13,20 @@ public class Player : Area2D {
 
     public override void _Ready() {
         _screenSize = GetViewport().Size;
+        extent = GetNode<Sprite>("Sprite").Texture.GetSize().x / 2;
+    }
 
+    private void Start(Vector2 _position) {
+        Position = _position;
+        Show();
+        GetNode<CollisionShape2D>("CollisionShape2D").Disabled = false;
     }
 
     public override void _Process(float delta) {
+        var velocity = new Vector2();
 
+        if(Input.IsActionPressed("ui_right")) {
+            velocity.x += 2f;
+        }
     }
 }

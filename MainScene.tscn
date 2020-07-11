@@ -1,9 +1,20 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=2]
+[ext_resource path="res://MainScene.cs" type="Script" id=3]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Bullet.tscn" type="PackedScene" id=5]
 
 [node name="Main" type="Node2D"]
+script = ExtResource( 3 )
+Enemy = ExtResource( 4 )
+Bullet = ExtResource( 5 )
+numOfRows = 2
+minShootTime = 1
+maxShootTime = 3
+minBulletVelocity = 2.0
+maxBulletVelocity = 4.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -28,3 +39,7 @@ scale = Vector2( 0.3377, 0.324906 )
 [node name="ScoreTimer" type="Timer" parent="."]
 
 [node name="HUD" parent="." instance=ExtResource( 2 )]
+[connection signal="Hit" from="Player" to="." method="GameOver"]
+[connection signal="timeout" from="EnemyShoot" to="." method="_on_EnemyShoot_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_ScoreTimer_timeout"]
+[connection signal="StartGame" from="HUD" to="." method="_on_HUD_StartGame"]

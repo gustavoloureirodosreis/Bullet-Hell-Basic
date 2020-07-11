@@ -18,7 +18,7 @@ public class Player : Area2D {
         extent = GetNode<Sprite>("Sprite").Texture.GetSize().x / 2;
     }
 
-    private void Start(Vector2 _position) {
+    public void Start(Vector2 _position) {
         Position = _position;
         Show();
         GetNode<CollisionShape2D>("CollisionShape2D").Disabled = false;

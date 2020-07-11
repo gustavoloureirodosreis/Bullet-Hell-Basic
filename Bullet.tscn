@@ -6,7 +6,9 @@
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( -50, 0, 0, 50, 50, 0, 0, -50 )
 
-[node name="Bullet" type="RigidBody2D"]
+[node name="Bullet" type="RigidBody2D" groups=[
+"bullets",
+]]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

@@ -12,9 +12,9 @@ Enemy = ExtResource( 4 )
 Bullet = ExtResource( 5 )
 numOfRows = 2
 minShootTime = 1
-maxShootTime = 3
-minBulletVelocity = 2.0
-maxBulletVelocity = 4.0
+maxShootTime = 5
+minBulletVelocity = 1.0
+maxBulletVelocity = 300.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -33,6 +33,7 @@ position = Vector2( 512, 552 )
 scale = Vector2( 0.3377, 0.324906 )
 
 [node name="StartPosition" type="Position2D" parent="."]
+position = Vector2( 512, 560 )
 
 [node name="EnemyShoot" type="Timer" parent="."]
 

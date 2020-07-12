@@ -9,10 +9,13 @@ points = PoolVector2Array( -50, 0, 0, 50, 50, 0, 0, -50 )
 [node name="Bullet" type="RigidBody2D" groups=[
 "bullets",
 ]]
+collision_mask = 0
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.324602, 0.324602 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 0.295248, 0.295248 )
 shape = SubResource( 1 )

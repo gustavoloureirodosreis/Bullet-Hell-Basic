@@ -17,6 +17,8 @@ _global_script_class_icons={
 
 config/name="Bullet Hell Basic"
 run/main_scene="res://MainScene.tscn"
+run/disable_stdout=true
+run/disable_stderr=true
 config/icon="res://icon.png"
 
 [rendering]
